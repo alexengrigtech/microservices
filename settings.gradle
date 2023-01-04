@@ -9,3 +9,6 @@ pluginManagement {
 }
 
 rootProject.name = 'microservices'
+
+include('publication')
+include('publication:publication-text-service')

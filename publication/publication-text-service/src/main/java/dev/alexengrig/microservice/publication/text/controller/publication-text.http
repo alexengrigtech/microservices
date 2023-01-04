@@ -1,0 +1,6 @@
+POST {{baseUrl}}/api/internal/publications/texts
+Content-Type: text/plain
+
+This is text!
+
+###
