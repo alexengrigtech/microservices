@@ -1,0 +1,11 @@
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version "${springBootPluginVersion}"
+        id 'io.spring.dependency-management' version "${springDepManPluginVersion}"
+    }
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'microservices'
