@@ -1,0 +1,13 @@
+POST {{censoringTextServiceUrl}}/api/internal/censoring/texts
+Content-Type: text/plain
+
+This is text!
+
+###
+
+POST {{censoringTextServiceUrl}}/api/internal/censoring/texts
+Content-Type: text/plain
+
+This is war!
+
+###
