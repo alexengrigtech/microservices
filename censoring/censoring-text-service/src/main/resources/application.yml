@@ -7,3 +7,12 @@ censoring:
   text:
     blacklist:
       - war
+
+spring:
+  application:
+    name: censoring-text-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

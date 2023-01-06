@@ -6,3 +6,12 @@ server:
 service:
   censoring-text:
     url: http://localhost:8028
+
+spring:
+  application:
+    name: publication-text-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
