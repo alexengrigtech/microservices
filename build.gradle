@@ -30,4 +30,12 @@ subprojects {
             testAnnotationProcessor('org.projectlombok:lombok')
         }
     }
+
+    pluginManager.withPlugin('io.spring.dependency-management') {
+        dependencyManagement {
+            imports {
+                mavenBom("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+            }
+        }
+    }
 }

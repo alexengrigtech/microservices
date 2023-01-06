@@ -10,6 +10,9 @@ pluginManagement {
 
 rootProject.name = 'microservices'
 
+include('discovery')
+include('discovery:eureka-server')
+
 include('publication')
 include('publication:publication-text-service')
 include('rating')
