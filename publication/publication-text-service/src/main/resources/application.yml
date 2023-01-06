@@ -1,2 +1,8 @@
 server:
   port: 8008
+  error:
+    include-message: ALWAYS
+
+service:
+  censoring-text:
+    url: http://localhost:8028
