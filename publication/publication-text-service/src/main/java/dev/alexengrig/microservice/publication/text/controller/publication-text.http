@@ -1,4 +1,4 @@
-POST {{baseUrl}}/api/internal/publications/texts
+POST {{publicationTextServiceUrl}}/api/internal/publications/texts
 Content-Type: text/plain
 
 This is text!

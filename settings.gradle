@@ -12,3 +12,5 @@ rootProject.name = 'microservices'
 
 include('publication')
 include('publication:publication-text-service')
+include('rating')
+include('rating:rating-text-service')
