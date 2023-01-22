@@ -1,17 +1,5 @@
-server:
-  port: 8008
-  error:
-    include-message: ALWAYS
-
-service:
-  censoring-text:
-    url: http://localhost:8028
-
 spring:
   application:
     name: publication-text-service
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+  config:
+    import: 'optional:configserver:'

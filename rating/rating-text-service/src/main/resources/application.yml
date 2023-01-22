@@ -1,11 +1,5 @@
-server:
-  port: 8018
-
 spring:
   application:
     name: rating-text-service
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+  config:
+    import: 'configserver:http://localhost:8888'

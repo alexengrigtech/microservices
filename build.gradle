@@ -26,6 +26,10 @@ subprojects {
 
             implementation('org.springframework.boot:spring-boot-starter-actuator')
 
+            if (project.name != 'config-server') {
+                implementation('org.springframework.cloud:spring-cloud-starter-config')
+            }
+
             if (project.name != 'eureka-server') {
                 implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
             }
