@@ -8,7 +8,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/alexengrig/microservices-configuration
+          uri: ${CONFIG_SERVER_GIT_URL}
+          username: ${CONFIG_SERVER_GIT_USERNAME}
+          password: ${CONFIG_SERVER_GIT_PASSWORD}
           search-paths:
             - 'application'
             - 'application/{application}'
@@ -18,4 +20,12 @@ spring:
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_DEFAULT_ZONE_URL:${EUREKA_SERVER_URL}/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
