@@ -30,7 +30,7 @@ subprojects {
 
             implementation('org.springframework.boot:spring-boot-starter-actuator')
 
-            if (project.name != 'config-server') {
+            if (project.name != 'config-server' && project.name != 'eureka-server') {
                 implementation('org.springframework.cloud:spring-cloud-starter-config')
             }
 

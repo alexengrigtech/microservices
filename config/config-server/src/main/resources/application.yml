@@ -12,10 +12,7 @@ spring:
           username: ${CONFIG_SERVER_GIT_USERNAME}
           password: ${CONFIG_SERVER_GIT_PASSWORD}
           search-paths:
-            - 'application'
-            - 'application/{application}'
-            - 'infrastructure'
-            - 'infrastructure/{application}'
+            - '{application}'
 
 eureka:
   client:

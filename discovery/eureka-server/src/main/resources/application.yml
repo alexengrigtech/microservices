@@ -1,5 +1,23 @@
+server:
+  port: ${EUREKA_SERVER_PORT:8761}
+
 spring:
   application:
     name: eureka-server
-  config:
-    import: configserver:${CONFIG_SERVER_URL}
+
+eureka:
+  instance:
+    hostname: ${EUREKA_SERVER_HOST}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE_URL:${EUREKA_SERVER_URL}/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
