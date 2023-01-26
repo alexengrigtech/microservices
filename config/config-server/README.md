@@ -21,19 +21,12 @@ Optional:
 ```text
 repository/
     application.yml
-    application/
+    application-profile1.yml
+    application-profile2.yml
+    service1/
         application.yml
-        application-profile.yml
-        service1/
-            application.yml
-            application-profile1.yml
-        service2/
-            application.yml
-            application-profile2.yml
-    infrastructure/
+        application-profile3.yml
+    service2/
         application.yml
-        application-profile.yml
-        service/
-            application.yml
-            application-profile.yml
+        application-profile4.yml
 ```
