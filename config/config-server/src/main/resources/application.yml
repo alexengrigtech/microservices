@@ -9,6 +9,11 @@ spring:
       server:
         git:
           uri: https://github.com/alexengrig/microservices-configuration
+          search-paths:
+            - 'application'
+            - 'application/{application}'
+            - 'infrastructure'
+            - 'infrastructure/{application}'
 
 eureka:
   client:
