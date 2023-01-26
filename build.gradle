@@ -20,6 +20,10 @@ subprojects {
     }
 
     pluginManager.withPlugin('org.springframework.boot') {
+        springBoot {
+            buildInfo()
+        }
+
         dependencies {
             implementation('org.springframework.boot:spring-boot-starter')
             testImplementation('org.springframework.boot:spring-boot-starter-test')
