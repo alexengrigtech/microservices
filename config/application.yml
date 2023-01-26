@@ -1,9 +1,4 @@
 spring:
-  profiles:
-    active: local
-    group:
-      local:
-      dev:
   config:
     import:
       - file:config/.env[.properties]
