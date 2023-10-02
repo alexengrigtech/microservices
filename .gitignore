@@ -3,6 +3,8 @@
 **/gradle/**
 !gradle/wrapper/gradle-wrapper.properties
 **/gradlew
+!gradlew
 **/gradlew.bat
+!gradlew.bat
 **/build/**
 config/override.env
