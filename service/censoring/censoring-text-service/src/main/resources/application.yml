@@ -1,3 +1,6 @@
+server:
+  port: ${CENSORING_TEXT_SERVICE_PORT:8028}
+
 spring:
   application:
     name: censoring-text-service

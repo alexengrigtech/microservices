@@ -1,3 +1,6 @@
+server:
+  port: ${RATING_TEXT_SERVICE_PORT:8018}
+
 spring:
   application:
     name: rating-text-service

@@ -1,3 +1,6 @@
+server:
+  port: ${PUBLICATION_TEXT_SERVICE_PORT:8008}
+
 spring:
   application:
     name: publication-text-service

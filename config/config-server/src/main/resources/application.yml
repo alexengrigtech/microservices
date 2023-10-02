@@ -13,6 +13,9 @@ spring:
           password: ${CONFIG_SERVER_GIT_PASSWORD}
           search-paths:
             - '{application}'
+        native:
+          add-label-locations: false
+          search-locations: config/config-native
 
 eureka:
   client:
