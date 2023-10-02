@@ -3,3 +3,11 @@ spring:
     import:
       - file:config/.env[.properties]
       - optional:file:config/override.env[.properties]
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
