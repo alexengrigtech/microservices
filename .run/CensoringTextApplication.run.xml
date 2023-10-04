@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CensoringTextApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="microservices.service.censoring.censoring-text-service.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="dev.alexengrig.microservice.censoring.text.CensoringTextApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

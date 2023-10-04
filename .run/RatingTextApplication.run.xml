@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RatingTextApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="microservices.service.rating.rating-text-service.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="dev.alexengrig.microservice.rating.text.RatingTextApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
