@@ -8,4 +8,6 @@ dependencies {
     implementation('org.springframework.cloud:spring-cloud-config-server')
     // Spring Cloud Config Starter
     implementation('org.springframework.cloud:spring-cloud-starter-config')
+    // Spring Cloud Discovery - Eureka Client
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 }
