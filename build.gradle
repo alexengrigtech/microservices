@@ -5,50 +5,55 @@ plugins {
 }
 
 subprojects {
-    apply plugin: 'java'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'io.github.alexengrig.spring-banner'
+    pluginManager.withPlugin('java') {
+        group = 'dev.alexengrig.microservice'
+        version = '0.1.0-SNAPSHOT'
 
-    group = 'dev.alexengrig.microservice'
-    version = '0.1.0-SNAPSHOT'
+        sourceCompatibility = '17'
 
-    sourceCompatibility = '17'
+        repositories {
+            mavenCentral()
+        }
 
-    springBoot {
-        buildInfo()
-    }
-
-    repositories {
-        mavenCentral()
-    }
-
-    dependencyManagement {
-        imports {
-            mavenBom("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+        test {
+            useJUnitPlatform()
         }
     }
 
-    dependencies {
-        implementation('org.springframework.boot:spring-boot-starter')
-        testImplementation('org.springframework.boot:spring-boot-starter-test')
+    pluginManager.withPlugin('org.springframework.boot') {
+        apply plugin: 'io.spring.dependency-management'
+        apply plugin: 'io.github.alexengrig.spring-banner'
 
-        implementation('org.springframework.boot:spring-boot-starter-actuator')
+        springBoot {
+            buildInfo()
+        }
 
-        // Spring Cloud LoadBalancer is currently working with the default cache.
-        // While this cache implementation is useful for development and tests,
-        // it's recommended to use Caffeine cache in production.
-        // You can switch to using Caffeine cache,
-        // by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-        implementation('com.github.ben-manes.caffeine:caffeine')
+        dependencyManagement {
+            imports {
+                mavenBom("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+            }
+        }
 
-        compileOnly('org.projectlombok:lombok')
-        annotationProcessor('org.projectlombok:lombok')
-        testCompileOnly('org.projectlombok:lombok')
-        testAnnotationProcessor('org.projectlombok:lombok')
-    }
+        dependencies {
+            // Spring Boot
+            implementation('org.springframework.boot:spring-boot-starter')
+            testImplementation('org.springframework.boot:spring-boot-starter-test')
 
-    test {
-        useJUnitPlatform()
+            // Spring Boot Actuator
+            implementation('org.springframework.boot:spring-boot-starter-actuator')
+
+            // Spring Cloud LoadBalancer is currently working with the default cache.
+            // While this cache implementation is useful for development and tests,
+            // it's recommended to use Caffeine cache in production.
+            // You can switch to using Caffeine cache,
+            // by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+            implementation('com.github.ben-manes.caffeine:caffeine')
+
+            // Lombok
+            compileOnly('org.projectlombok:lombok')
+            annotationProcessor('org.projectlombok:lombok')
+            testCompileOnly('org.projectlombok:lombok')
+            testAnnotationProcessor('org.projectlombok:lombok')
+        }
     }
 }
