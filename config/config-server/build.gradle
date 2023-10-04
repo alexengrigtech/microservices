@@ -4,7 +4,8 @@ plugins {
 }
 
 dependencies {
+    // Spring Cloud Config Server
     implementation('org.springframework.cloud:spring-cloud-config-server')
-
+    // Spring Cloud Config Starter
     implementation('org.springframework.cloud:spring-cloud-starter-config')
 }
