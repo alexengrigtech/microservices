@@ -15,7 +15,7 @@ spring:
             - '{application}'
         native:
           add-label-locations: false
-          search-locations: config/config-native
+          search-locations: ./config-native
 
 eureka:
   client:

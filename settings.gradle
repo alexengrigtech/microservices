@@ -11,8 +11,7 @@ pluginManagement {
 
 rootProject.name = 'microservices'
 
-include('config')
-include('config:config-server')
+include('config-server')
 
 include('discovery')
 include('discovery:eureka-server')
