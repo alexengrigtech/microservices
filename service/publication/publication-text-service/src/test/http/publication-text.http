@@ -1,11 +1,15 @@
-POST {{publicationTextServiceUrl}}/api/internal/publications/texts
+POST {{publicationTextServiceUrl}}/api/publications/texts
 Content-Type: text/plain
 
 This is text!
 
 ###
 
-POST {{publicationTextServiceUrl}}/api/internal/publications/texts
+GET {{publicationTextServiceUrl}}/api/publications/texts/4ce50545-5313-47f9-b34f-688d1c48ea01
+
+###
+
+POST {{publicationTextServiceUrl}}/api/publications/texts
 Content-Type: text/plain
 
 This is war!

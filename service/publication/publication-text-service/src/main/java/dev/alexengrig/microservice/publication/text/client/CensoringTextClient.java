@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(value = "censoring-text-service", path = "/api/internal/censoring/texts")
+@FeignClient(value = "censoring-text-service", path = "/api/censoring/texts")
 public interface CensoringTextClient {
 
     @PostMapping
