@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/internal/ratings/texts/likings")
+@RequestMapping("/api/ratings/texts/likings")
 public class LikingTextController {
 
     private final LikingTextService service;
