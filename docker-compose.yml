@@ -1,0 +1,9 @@
+name: ms
+
+services:
+  structurizr:
+    image: structurizr/lite:3234
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/usr/local/structurizr
