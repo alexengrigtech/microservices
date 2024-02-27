@@ -1,9 +1,12 @@
 package dev.alexengrig.microservice.censoring.text.service;
 
+import dev.alexengrig.microservice.censoring.text.validator.TextValidationException;
+import dev.alexengrig.microservice.censoring.text.validator.TextValidator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -11,17 +14,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CensoringTextServiceImpl implements CensoringTextService {
 
-    private final List<TextCensor> censors;
+    private final List<TextValidator> validators;
 
     @Override
     public void censor(String text) {
-        for (TextCensor censor : censors) {
+        List<String> messages = new ArrayList<>(validators.size());
+        for (TextValidator validator : validators) {
             try {
-                censor.check(text);
-            } catch (Exception e) {
-                log.info("Censored text by '{}': '{}'", e.getMessage(), text);
-                throw e;
+                validator.validate(text);
+            } catch (TextValidationException e) {
+                messages.add(e.getMessage());
             }
+        }
+        if (!messages.isEmpty()) {
+            throw new CensoringTextException(messages);
         }
     }
 

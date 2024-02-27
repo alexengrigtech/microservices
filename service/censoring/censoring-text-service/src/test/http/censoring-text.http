@@ -1,11 +1,11 @@
-POST {{censoringTextServiceUrl}}/api/internal/censoring/texts
+POST {{censoringTextServiceUrl}}/api/censoring/texts
 Content-Type: text/plain
 
 This is text!
 
 ###
 
-POST {{censoringTextServiceUrl}}/api/internal/censoring/texts
+POST {{censoringTextServiceUrl}}/api/censoring/texts
 Content-Type: text/plain
 
 This is war!
