@@ -4,6 +4,8 @@ import dev.alexengrig.microservice.publication.text.client.CensoringTextClient;
 import dev.alexengrig.microservice.publication.text.repository.PublicationTextRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -19,7 +21,10 @@ public class SimplePublicationTextService implements PublicationTextService {
 
     @Override
     public UUID publish(String text) {
-        censoringClient.censor(text);
+        ResponseEntity<String> censoringResponse = censoringClient.censor(text);
+        if (censoringResponse.getStatusCode() != HttpStatus.OK) {
+            throw new CensoredTextException(censoringResponse.getBody());
+        }
         UUID textId = repository.save(text);
         log.info("Published text by id '{}': '{}'", textId, text);
         return textId;

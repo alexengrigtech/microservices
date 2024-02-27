@@ -1,6 +1,7 @@
 package dev.alexengrig.microservice.publication.text.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -8,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface CensoringTextClient {
 
     @PostMapping
-    void censor(@RequestBody String text);
+    ResponseEntity<String> censor(@RequestBody String text);
 
 }
