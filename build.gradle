@@ -55,5 +55,16 @@ subprojects {
             testCompileOnly('org.projectlombok:lombok')
             testAnnotationProcessor('org.projectlombok:lombok')
         }
+
+        bootBuildImage {
+            def user = 'alexengrig'
+            imageName = "${user}/ms-${project.name}:${project.version}"
+            docker {
+                publishRegistry {
+                    username = user
+                    password = System.getenv('IMAGE_REGISTRY_TOKEN')
+                }
+            }
+        }
     }
 }
