@@ -1,5 +1,7 @@
 # config-server
 
+[Official docs](https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_quick_start).
+
 ## env
 
 Required:
