@@ -1,13 +1,11 @@
 package dev.alexengrig.microservice.censoring.text.config.props;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Set;
 
-@Getter
-@AllArgsConstructor
+@Data
 @ConfigurationProperties("censoring.text")
 public class CensoringTextProps {
 
