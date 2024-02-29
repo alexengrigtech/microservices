@@ -11,6 +11,8 @@ pluginManagement {
 
 rootProject.name = 'microservices'
 
+include('admin-server')
+
 include('config-server')
 
 include('discovery')

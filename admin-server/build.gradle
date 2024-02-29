@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    // Spring Boot Admin Server
+    implementation('de.codecentric:spring-boot-admin-starter-server')
+    // Spring Cloud Discovery - Eureka Client
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}")
+    }
+}
