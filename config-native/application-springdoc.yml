@@ -1,0 +1,6 @@
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: /openapi
+  swagger-ui:
+    path: /swagger

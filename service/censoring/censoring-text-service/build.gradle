@@ -11,5 +11,7 @@ dependencies {
 
     implementation('org.springframework.boot:spring-boot-starter-web')
 
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}")
+
     annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
 }
